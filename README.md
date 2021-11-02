@@ -1,6 +1,4 @@
 # HINNDY
 
-##This is the introduction
- This is the second introduciton
+## Hidden Identification of Nonlinear Normal form dynamics 
 
-This is the third intro
