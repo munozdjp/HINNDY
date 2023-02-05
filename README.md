@@ -14,7 +14,7 @@ Collection of Matlab implementaion of HINNDY presented in reasearch paper. The i
   
 MATLAB-2020.
 
-Download the folder [Folder](https://github.com/munozdjp/HINNDy-/tree/main/HINNDy__Code), and run each script in the specific directory.
+Download the [Folder](https://github.com/munozdjp/HINNDy-/tree/main/HINNDy__Code), and run each script in the specific directory cd/HINNDy__Code/<script>
 
 The scripts generates the results for 
   * Prediction of Learned Variable
