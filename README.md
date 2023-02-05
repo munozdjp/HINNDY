@@ -16,7 +16,7 @@ Collection of Matlab implementaion of HINNDY presented in reasearch paper. The i
   
 MATLAB-2020.
 
-* [[SaddleNodeLeft2Rigth]]([https://github.com/munozdjp/HINNDY/tree/main/HINNDy__Code](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m))
+* [SaddleNodeLeft2Rigth](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m)
   
 This script generates the results for saddle node bifurcation 
   * Prediction of Learned Variable
