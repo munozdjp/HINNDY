@@ -16,18 +16,31 @@ Collection of Matlab implementaion of HINNDY presented in reasearch paper. The i
   
 MATLAB-2020.
 
-* [SaddleNodeLeft2Rigth](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m)
-  
-This script generates the results for saddle node bifurcation 
+This script generates the results for 
   * Prediction of Learned Variable
   * Noise analysis. 
-   
+  
+Saddle-node bifurcation:
+* [Code SaddleNode](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m)
+  
+Pithchfork-bifurcation:
+* [Code Pitchfork](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m)
+
+Hopf-Bifurcation:
+* [Code Hopf]
+
+Hodking-Huxley
+* [Code Hodking-Huxley Dynamical model ]
+
+Fitzhugh-Nagumo
+* [Code Fitzhugh-Nagumo Dynamical Model]
+
 
 ## Implementations   
 
 ### HINNDy
 _Hidden Identification of Nonlinear Normal form Dynamics _
-
+Put bullet points instead of abstract. 
 #### Authors
 Juan Pablo Munoz Diaz,..., David Gomez Cabrero, Narsis Kiani, Jesper tegner
 
