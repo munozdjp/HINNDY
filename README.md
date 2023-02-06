@@ -8,6 +8,9 @@ A compilation of HINNDy Matlab implementations described in a research article. 
 
 * [Summary](#Summary)
 * [Code](#Code)
+* [Contributing](#Contributing)
+* [License](#License)
+* [Working_example_saddle_node](#Working-example-saddle-node)
 
 # HINNDy Workflow
 
@@ -58,9 +61,13 @@ Simply fork the repository and make the appropriate changes to contribute to HIN
 # License
 HINNDy is licensed under the GNU License. Refer to LICENSE for additional details.
   
-# Working example [saddle node code](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m)
 
-Define, timestep, time_interval, ground truth decreasing polynomial.   
+Working example saddle node 
+---------------------------
+
+Find the complete script of [saddle node code](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m) 
+
+First we define: timestep, time_interval, ground truth decreasing polynomial.   
   
 ```
 dt=0.1; 
@@ -106,12 +113,35 @@ title('Saddle  State vsparameter')
 hold off    
 ```
   
-We proceedd to use the equation of the normal form to predict our hidden variable on our case $\mu = \alpha$  
+We proceedd to use the equation of the normal form to predict our hidden variable on our case $\mu = \alpha$, afterwards we use this information to find the best polynomial fit using the   
 
   
 ```
+% Hidden variable using normal form equation  
+mufunc = @(x) (x(:,3).^2)*xMax(3)^2; 
+mu_observed= mufunc(x);
+
+%Polinomial fit
+%Define the function to fit: "Poly order 2"
+F1=@(weightdx,xdata)  weightdx(1)*(xdata+tinterval(1))+weightdx(2)*(xdata+tinterval(1)).^2 ...
+        +weightdx(3).*(xdata+tinterval(1)).^3;  
   
+reproduced_data= F1(weightdx,tspan);
+
+
+%plot of beta: real VS polinomial fit VS steady equations
+plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3)
+
+
+%% Noise analysis 
+% Creation of comparison vector for different noise variances: 
+VectorOfNoise = [0:0.1:0.5];
+name = mfilename;
+name = name(1:10);
+
+noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
 ```
 
+The script will then make a plot with the learned hidden variable and a detailed noise analysis of HINNDy.
 
 
