@@ -6,11 +6,11 @@
 
 Collection of Matlab implementaion of HINNDY presented in reasearch paper. The implementation mirror the ones proposed in the paper. I have choseen to focus on getting every implementation and specifics right.
 
-* [Workflow](#Hinndy Workflow)  
+* [Workflow](#HINNDy Workflow)  
 * [Summary](#Summary)
 * [Code](#Code)
 
-# HINNDy workflow
+# HINNDy Workflow
 
 ![Figure 1](https://user-images.githubusercontent.com/67231886/216831134-8c8a00b7-ed6d-43b1-974b-f3de3f376b19.png)
 
