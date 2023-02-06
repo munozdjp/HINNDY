@@ -56,7 +56,7 @@ These are the following scripts that you can find on this GitHub:
 Simply fork the repository and make the appropriate changes to contribute to HINNDy. Once complete, send a pull request and we will evaluate your contributions.
 
 # License
-HINNDy is licensed under the GOV License. Refer to LICENSE for additional details.
+HINNDy is licensed under the GNU License. Refer to LICENSE for additional details.
 
 
 
