@@ -22,13 +22,7 @@ Initinterval = 250;
 c=[p1,p2,p3,p4,Initinterval];
 y2=c(1)+c(2)*(t)+c(3)*(t).^2+c(4)*(t).^3;
 %Set externally applied current across time
-%Here, first 500 timesteps are at current of 50, next 1500 timesteps at
-%current of zero (resets resting potential of neuron), and the rest of
-%timesteps are at constant current
 
-% I(1:500) = currentLevels;
-% I(501:2000) = 0; 
-% I(2001:numel(t)) = currentLevels;
 I=y2;
 
 %===constant parameters===%
