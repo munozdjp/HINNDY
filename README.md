@@ -67,7 +67,8 @@ Working example saddle node
 
 Find the complete script of [saddle node code](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m) 
 
-First we define: timestep, time_interval, ground truth decreasing polynomial.   
+First, we define timestep, time interval, and the diminishing polynomial of the ground truth.
+
   
 ```
 dt=0.1; 
@@ -79,7 +80,7 @@ c=[1,0,0,Initinterval];
 y2=c(1)*(-tspan+tinterval(2) )+c(2)*(-tspan...
     +tinterval(2)).^2+c(3)*(-tspan+tinterval(2)).^3;
 ```  
-Given the proposed polynomial we construct our extended systems "saddle-node" this system can be found in the folder [Utils](https://github.com/munozdjp/HINNDy/blob/main/HINNDy__Code/Utils/saddlenodeNewPoli.m) Notice how the "reescale time" variables and maxBeta vector are the 1. The reescaling factors are only used to more fixed models.  
+Given the suggested polynomial, we create the saddle-node system, which can be found in the folder [Utils](https://github.com/munozdjp/HINNDy/blob/main/HINNDy__Code/Utils/saddlenodeNewPoli.m) Notice how the "reescale time" variables and maxBeta vector are 1's. The reescaling factors are only used when we use the normal form to predict other models.  
   
 ```
 dy = [reescaletime;
@@ -89,7 +90,7 @@ dy = [reescaletime;
 ];  
 ```
   
-Find the trayectory with the ground truth dynamic using ODE45 library. 
+We determine the dynamic trayectory with the ground truth using the ODE45 library.
 
 ```
 mu0=[yzero(1)]    
@@ -113,7 +114,7 @@ title('Saddle  State vsparameter')
 hold off    
 ```
   
-We proceedd to use the equation of the normal form to predict our hidden variable on our case $\mu = \alpha$, afterwards we use this information to find the best polynomial fit using the   
+Using the equation of the normal form, we predicted our hidden variable on our case $\mu = \alpha$, afterwards we use this information to find the best polynomial fit using the curve fitting library. We then used this information to get the optimal polynomial fit using the curve fitting library. The script will then make a plot with the learned hidden variable
 
   
 ```
@@ -126,13 +127,20 @@ mu_observed= mufunc(x);
 F1=@(weightdx,xdata)  weightdx(1)*(xdata+tinterval(1))+weightdx(2)*(xdata+tinterval(1)).^2 ...
         +weightdx(3).*(xdata+tinterval(1)).^3;  
   
+% curve fitting
+weights0=[0.5 0.5 0.5]; %initial guess for weights
+opts = optimoptions('lsqcurvefit','Display','off');
+[weightdx, resnorm,~,exitflag,output] = lsqcurvefit(F1,weights0, tspan, mu_observed',[],[],opts);  
 reproduced_data= F1(weightdx,tspan);
 
 
 %plot of beta: real VS polinomial fit VS steady equations
 plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3)
+```
 
-
+Detailed noise analysis of HINNDy.  
+  
+```
 %% Noise analysis 
 % Creation of comparison vector for different noise variances: 
 VectorOfNoise = [0:0.1:0.5];
@@ -141,7 +149,5 @@ name = name(1:10);
 
 noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
 ```
-
-The script will then make a plot with the learned hidden variable and a detailed noise analysis of HINNDy.
 
 
