@@ -7,14 +7,6 @@ addpath('./plottingfunctions/');
 %coefficient of the right polinomial (polinomial of order 4 ...
 %that perform the desired behavior (increasing))
  
-% p1 =         1.1; 
-% p2 =      0.9285;
-% p3 =    -0.02771;
-% p4 =   0.0003581;
-% p1 =         5;
-% p2 =      0;
-% p3 =    0;
-% p4 =   0;
 p1 =         1.1; 
 p2 =      0.09285;
 p3 =    0;
