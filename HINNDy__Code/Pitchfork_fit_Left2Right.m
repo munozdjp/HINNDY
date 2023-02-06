@@ -70,9 +70,6 @@ for mu0=[yzero(1)];  %initial condition of Beta
 end
 
 xMax = max(abs(x))
-% load("MaxJin.mat")
-% jingWangScale = xMax./MaxJin(1:3)
-% xMax = jingWangScale
 
 for mu0=[yzero(1)];  %initial condition of Beta  
     %sqrt(muo)%formula of coordinate x0 in function of beta(mu0)
@@ -139,5 +136,4 @@ plotCleanNoiseStateFig_6(tspan,Noise_normalized,yzero,n)
 VectorOfNoise = [0:0.1:0.5];
 name = mfilename
 name = name(1:10)
-%noise_Scale_maximum(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
 noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
