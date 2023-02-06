@@ -12,11 +12,6 @@ p2 =      0.9285;
 p3 =    -0.02771;
 p4 =   0.0003581;
 
-% p1 =         1.1;
-% p2 =      1.9285;
-% p3 =    2.02771;
-% p4 =   0.43581;
-
 omega= 10;
 beta=2.66;
 rho=1.1;
@@ -112,15 +107,7 @@ mu_obsNoisy = mufunc(xNoisy);
 reproduced_dataNoisy= F1(weightdxNoise,tspan);
 
 comparisonVector = [c(1:(length(c)-1));weightdx;weightdxNoise]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% plotNoisyStateFig_4(tspan,xNoisy,mu_obsNoisy,yzero,reproduced_dataNoisy,n)
-
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% plotCleanNoiseStateFig_5(tspan,Noise_normalized,yzero,n)
 %% Noise analysis 
 % Creation of comparison vector for different noise variances: 
 VectorOfNoise = [0:0.1:0.5];
