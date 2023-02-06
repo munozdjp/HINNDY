@@ -72,7 +72,7 @@ c=[1,0,0,Initinterval];
 y2=c(1)*(-tspan+tinterval(2) )+c(2)*(-tspan...
     +tinterval(2)).^2+c(3)*(-tspan+tinterval(2)).^3;
 ```  
-Given the proposed polynomial we construct our extended systems "saddle-node" this system can be found in the folder [Utils](https://github.com/munozdjp/HINNDy/blob/main/HINNDy__Code/Utils/saddlenodeNewPoli.m)
+Given the proposed polynomial we construct our extended systems "saddle-node" this system can be found in the folder [Utils](https://github.com/munozdjp/HINNDy/blob/main/HINNDy__Code/Utils/saddlenodeNewPoli.m) Notice how the "reescale time" variables and maxBeta vector are the 1. The reescaling factors are only used to more fixed models.  
   
 ```
 dy = [reescaletime;
@@ -82,7 +82,7 @@ dy = [reescaletime;
 ];  
 ```
   
-Find the trayectory with the ground truth dynamic. 
+Find the trayectory with the ground truth dynamic using ODE45 library. 
 
 ```
 mu0=[yzero(1)]    
@@ -94,6 +94,7 @@ figure(2)
 hold on
 plot(x(:,2),x(:,3),'b-')
 
+%plotting the state variable vs bifurcation parameter  
 xlabel('Beta')
 ylabel('x_3')
 xline(0,'k--');
@@ -103,11 +104,14 @@ l.FontSize = 14;
 l.Location='northeast';
 title('Saddle  State vsparameter')
 hold off    
-
 ```
+  
+We proceedd to use the equation of the normal form to predict our hidden variable on our case $\mu = \alpha$  
 
+  
 ```
-
+  
+```
 
 
 
