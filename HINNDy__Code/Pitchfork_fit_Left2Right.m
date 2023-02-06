@@ -13,14 +13,10 @@ dt=0.01;%timestep
 %Integrate interval
 
 Endinterval = 16; %initial value of the pitchfor bifurcation
-%Endinterval = 1.5; %initial value of the pitchfor bifurcation
+
 intervalzero = -.001;
 %real hidden variable interval
-%tinterval=[0 Initinterval];
 tinterval=[intervalzero Endinterval];
-
-
-
 
 % Integrate
 tspan2=[tinterval(2):-dt:tinterval(1)]; %interval for solving the 
@@ -29,7 +25,6 @@ N = length(tspan);
 options = odeset('RelTol',1e-12,'AbsTol',1e-12*ones(1,n));
 X=[];
 %Coeficients of polyorder 3 c1*t+c2*t^2+c3*t^3 & and final time value 
-%c=[3,2,1,Endinterval];
 c=[1,0,0,Endinterval];
 %Analitic polinomial
     y=c(1)*(tspan2)+c(2)*(tspan2).^2+c(3)*(tspan2).^3;
@@ -100,7 +95,6 @@ for mu0=[yzero(1)];  %initial condition of Beta
 end
 
 %Mu observed from equations of steady state
-%[x,yzero] = xNormalization(x,yzero);
 
 mufunc = @(x) ((x(:,3).^2))*xMax(3)^2
 mu_observed=mufunc(x); 
@@ -118,10 +112,9 @@ weights0=[0.5 0.5 0.5];%initial guess for weights
 %data predicted from F1 evaluated with the predicted coefficients
 reproduced_data= F1(weightdx,tspan);
 
-
 plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,4)
 
-%%Data with noise: 
+%% Data with noise: 
 
 noise_scale = 0.15;
 
@@ -135,15 +128,11 @@ mu_obsNoisy = mufunc(xNoisy);
 reproduced_dataNoisy= F1(weightdxNoise,tspan);
 
 comparisonVector = [c(1:(length(c)-1));weightdx;weightdxNoise]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 plotNoisyStateFig_5(tspan,xNoisy,mu_obsNoisy,yzero,reproduced_dataNoisy,n)
 
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 plotCleanNoiseStateFig_6(tspan,Noise_normalized,yzero,n)
-
 
 %% Noise analysis 
 % Creation of comparison vector for different noise variances: 
@@ -152,4 +141,3 @@ name = mfilename
 name = name(1:10)
 %noise_Scale_maximum(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
 noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
-
