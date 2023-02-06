@@ -10,7 +10,7 @@ A compilation of HINNDy Matlab implementations described in a research article. 
 * [Code](#Code)
 * [Contributing](#Contributing)
 * [License](#License)
-* [Working_example_saddle_node](#Working-example-saddle-node)
+* [Working example saddle node](#Working-example-saddle-node)
 
 # HINNDy Workflow
 
