@@ -38,19 +38,19 @@ cd HINNDy__Code/<script>
 
 The scripts generates the results for: 
   * Prediction of Learned Variable: a figure including the learned variable and the ground truth. 
-  * Noise analysis: a figure with the performance of 
+  * Noise analysis: a figure with the performance of HINNDy under the influence of noise with 5 different parameters. 
 
 These are the following scripts that you can find on this GitHub:
 
-1- [Saddle-node bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m): learned hidden variable from switching from lower fix point to upper stable fix point. 
+1- [Saddle-node bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m): prediction for switching fix point. 
   
-2- [Pithchfork-bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): 
+2- [Pithchfork-bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): prediction for growing fix point dynamic.
 
-3- [Hopf-Bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m):
+3- [Hopf-Bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): learned hidden variable on oscillator to fixpoint dynamic. 
 
-4- [Hodking-Huxley](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/hodg_Hux_fit_ObservedVariables.m):
+4- [Hodgkin-Huxley](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/hodg_Hux_fit_ObservedVariables.m): learned hidden variable on voltage discharge on neuron dynamic. 
 
-5- [Fitzhugh-Nagumo](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Fitz_Nagumo2th_fit_ObservedVariables.m):
+5- [FitzHugh-Nagumo](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Fitz_Nagumo2th_fit_ObservedVariables.m): learned hidden variable on nerve cell resonant regime. 
 
 # Contributing
 Simply fork the repository and make the appropriate changes to contribute to HINNDy. Once complete, send a pull request and we will evaluate your contributions.
