@@ -8,9 +8,10 @@ A compilation of HINNDy Matlab implementations described in a research article. 
 
 * [Summary](#Summary)
 * [Code](#Code)
+* [Working example saddle node](#Working-example-saddle-node)  
 * [Contributing](#Contributing)
 * [License](#License)
-* [Working example saddle node](#Working-example-saddle-node)
+
 
 # HINNDy Workflow
 
@@ -30,7 +31,7 @@ For additional information, please refer to the [Publication](https://github.com
   
 # Code
   
-MATLAB-2020.
+MATLAB-2020. There is not limitation in the OS. And it does not require special computational requirement. 
 
 Download the [Folder](https://github.com/munozdjp/HINNDy-/tree/main/HINNDy__Code), run each script in the specific directory. 
 
@@ -54,6 +55,33 @@ These are the following scripts that you can find on this GitHub:
 4- [Hodgkin-Huxley](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/hodg_Hux_fit_ObservedVariables.m): learned hidden variable on voltage discharge on neuron dynamic. 
 
 5- [FitzHugh-Nagumo](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Fitz_Nagumo2th_fit_ObservedVariables.m): learned hidden variable on nerve cell resonant regime. 
+  
+Working example saddle node 
+---------------------------
+
+Find the complete script of [saddle node](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m) 
+
+The saddle node bifurcation is a dynamical system that shows a switching point dynamic, from a lower state to a high upper state.  
+  
+First, we define the following variables, we recommend to use the default ones: 
+  
+```
+%timestep
+dt=0.1; 
+%final time point
+Initinterval = 16;
+%initial time point
+neg_inter = 0;
+```  
+
+After runnning this script in matlab_2020 the user can obtain 5 figures:
+  
+1 figure: the description of the first polyunomial 
+2 Figure: the description of the state variable 
+3 Figure:   
+..... Añadir la figuras 
+  
+
 
 # Contributing
 Simply fork the repository and make the appropriate changes to contribute to HINNDy. Once complete, send a pull request and we will evaluate your contributions.
@@ -61,93 +89,4 @@ Simply fork the repository and make the appropriate changes to contribute to HIN
 # License
 HINNDy is licensed under the GNU License. Refer to LICENSE for additional details.
   
-
-Working example saddle node 
----------------------------
-
-Find the complete script of [saddle node code](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m) 
-
-First, we define timestep, time interval, and the diminishing polynomial of the ground truth.
-
-  
-```
-dt=0.1; 
-Initinterval = 16;
-neg_inter = 0;
-tinterval=[neg_inter Initinterval];
-tspan=[.01:dt:tinterval(2)-tinterval(1)];
-c=[1,0,0,Initinterval];
-y2=c(1)*(-tspan+tinterval(2) )+c(2)*(-tspan...
-    +tinterval(2)).^2+c(3)*(-tspan+tinterval(2)).^3;
-```  
-Given the suggested polynomial, we create the saddle-node system, which can be found in the folder [Utils](https://github.com/munozdjp/HINNDy/blob/main/HINNDy__Code/Utils/saddlenodeNewPoli.m) Notice how the "reescale time" variables and maxBeta vector are 1's. The reescaling factors are only used when we use the normal form to predict other models.  
-  
-```
-dy = [reescaletime;
-  %-c(1)- 2*c(2)* (-y(1)+c(4)) - 3*c(3)*(-y(1)+c(4))^2;
- reescaletime*(c(1)+2*c(2).*(t)+3.*c(3).*t.^2)/maxBeta;
-+reescaletime*((y(2)-(y(3)*xMaxstate(3)).^2))/xMaxstate(3)
-];  
-```
-  
-We determine the dynamic trayectory with the ground truth using the ODE45 library.
-
-```
-mu0=[yzero(1)]    
-x0=sqrt(y(1))%Formula of radius of Initial Condition
-[t,x] = ode45(@(t,x) saddlenodeNewPoli(t,x,c,xMax,1,1),tspan,[tspan(1),mu0,x0],options);
-X = [X;x];
-% Variable x3 vs bifurcation parameter
-figure(2)
-hold on
-plot(x(:,2),x(:,3),'b-')
-
-%plotting the state variable vs bifurcation parameter  
-xlabel('Beta')
-ylabel('x_3')
-xline(0,'k--');
-set(gca,'FontSize',16);
-l=legend('state variable vs bifurcation');
-l.FontSize = 14;
-l.Location='northeast';
-title('Saddle  State vsparameter')
-hold off    
-```
-  
-Using the equation of the normal form, we predicted our hidden variable on our case $\mu = \alpha$, afterwards we use this information to find the best polynomial fit using the curve fitting library. We then used this information to get the optimal polynomial fit using the curve fitting library. The script will then make a plot with the learned hidden variable
-
-  
-```
-% Hidden variable using normal form equation  
-mufunc = @(x) (x(:,3).^2)*xMax(3)^2; 
-mu_observed= mufunc(x);
-
-%Polinomial fit
-%Define the function to fit: "Poly order 2"
-F1=@(weightdx,xdata)  weightdx(1)*(xdata+tinterval(1))+weightdx(2)*(xdata+tinterval(1)).^2 ...
-        +weightdx(3).*(xdata+tinterval(1)).^3;  
-  
-% curve fitting
-weights0=[0.5 0.5 0.5]; %initial guess for weights
-opts = optimoptions('lsqcurvefit','Display','off');
-[weightdx, resnorm,~,exitflag,output] = lsqcurvefit(F1,weights0, tspan, mu_observed',[],[],opts);  
-reproduced_data= F1(weightdx,tspan);
-
-
-%plot of beta: real VS polinomial fit VS steady equations
-plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3)
-```
-
-Detailed noise analysis of HINNDy.  
-  
-```
-%% Noise analysis 
-% Creation of comparison vector for different noise variances: 
-VectorOfNoise = [0:0.1:0.5];
-name = mfilename;
-name = name(1:10);
-
-noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
-```
-
 
