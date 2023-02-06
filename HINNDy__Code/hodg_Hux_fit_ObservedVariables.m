@@ -31,10 +31,6 @@ y2=c(1)+c(2)*(t)+c(3)*(t).^2+c(4)*(t).^3;
 % I(2001:numel(t)) = currentLevels;
 I=y2;
 
-%Comment out the above line and uncomment the line below for constant current, and observe effects on voltage timecourse
-%I(1:numel(t)) = currentLevels;
-
-
 %===constant parameters===%
 %All of these can be found in Table 3
 gbar_K=36; gbar_Na=120; g_L=.3;
