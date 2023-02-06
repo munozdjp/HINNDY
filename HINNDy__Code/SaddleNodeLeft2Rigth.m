@@ -1,6 +1,5 @@
-%The sadddle note bifurcation has problem when converging to the origin
-%i.e. moving from left to right(it goes to infinity after reachin the biff
-%point)
+%The sadddle note bifurcation it do not converges to the origin
+%i.e. moving from left to right, it goes to infinity after reachin the biff) Hence we use decreasing alpha 
 
 clear all, close all, clc
 figpath = '../figures/';
