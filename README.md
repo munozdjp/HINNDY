@@ -57,6 +57,57 @@ Simply fork the repository and make the appropriate changes to contribute to HIN
 
 # License
 HINNDy is licensed under the GNU License. Refer to LICENSE for additional details.
+  
+# Working example [saddle node code](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m)
+
+Define, timestep, time_interval, ground truth decreasing polynomial.   
+  
+```
+dt=0.1; 
+Initinterval = 16;
+neg_inter = 0;
+tinterval=[neg_inter Initinterval];
+tspan=[.01:dt:tinterval(2)-tinterval(1)];
+c=[1,0,0,Initinterval];
+y2=c(1)*(-tspan+tinterval(2) )+c(2)*(-tspan...
+    +tinterval(2)).^2+c(3)*(-tspan+tinterval(2)).^3;
+```  
+Given the proposed polynomial we construct our extended systems "saddle-node" this system can be found in the folder [Utils](https://github.com/munozdjp/HINNDy/blob/main/HINNDy__Code/Utils/saddlenodeNewPoli.m)
+  
+```
+dy = [reescaletime;
+  %-c(1)- 2*c(2)* (-y(1)+c(4)) - 3*c(3)*(-y(1)+c(4))^2;
+ reescaletime*(c(1)+2*c(2).*(t)+3.*c(3).*t.^2)/maxBeta;
++reescaletime*((y(2)-(y(3)*xMaxstate(3)).^2))/xMaxstate(3)
+];  
+```
+  
+Find the trayectory with the ground truth dynamic. 
+
+```
+mu0=[yzero(1)]    
+x0=sqrt(y(1))%Formula of radius of Initial Condition
+[t,x] = ode45(@(t,x) saddlenodeNewPoli(t,x,c,xMax,1,1),tspan,[tspan(1),mu0,x0],options);
+X = [X;x];
+% Variable x3 vs bifurcation parameter
+figure(2)
+hold on
+plot(x(:,2),x(:,3),'b-')
+
+xlabel('Beta')
+ylabel('x_3')
+xline(0,'k--');
+set(gca,'FontSize',16);
+l=legend('state variable vs bifurcation');
+l.FontSize = 14;
+l.Location='northeast';
+title('Saddle  State vsparameter')
+hold off    
+
+```
+
+```
+
 
 
 
