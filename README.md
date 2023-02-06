@@ -6,7 +6,6 @@
 
 A compilation of HINNDY Matlab implementations described in a research article. The implementation resembles those suggested in the paper. I've chosen to concentrate on having every implementation and detail correct.
 
-* [Workflow](#HINNDy Workflow)  
 * [Summary](#Summary)
 * [Code](#Code)
 
