@@ -14,7 +14,6 @@
 % Equation  = mu = (x * finalscale )^2 / maxBeta
 
 %note: everymodification in 4 needs to be reflected in 2 (Recall this)
-%second note
 %% 1) Generate data for the Pitchfork
 clear all, close all, clc
 figpath = '../figures/';
@@ -44,7 +43,6 @@ tinterval=[intervalzero Endinterval];
 tspan=[.001:dt:tinterval(2)-tinterval(1)];
 N = length(tspan);
 
-%options = odeset('RelTol',1e-12,'AbsTol',1e-12*ones(1,n));
 Xpitch=[];
 %Coeficients of polyorder 3 c1*t+c2*t^2+c3*t^3 & and final time value 
 %c=[3,2,1,Endinterval];
@@ -128,8 +126,6 @@ xMaxPitch = max(abs(Xpitch));
 % Do the transition 
 %   It is necessary to construct the JingWang Scale Togueter
 
-%I need to import the scale of JinWang as the maximum of its trajectories. 
-
 param = [0.3 0.3 1 1 0.5 4];
 a1 = param(1);
 a2 = param(2);
@@ -154,9 +150,6 @@ N = length(tspan);
 Xwang=[];
 
 %Coeficients of polyorder 3 c1*t+c2*t^2+c3*t^3 & and final time value 
-%c=[1/50,0,0,Initinterval];
-%cJin=[2.14,-5.05,3.9143,Initinterval];
-%cJin=[ 0.0, 1, 0, Initinterval ]; %2.14,-5.05,3.9143,Initinterval];
 cJin=[ 0.05, 0, 0, Initinterval ]; %2.14,-5.05,3.9143,Initinterval];
 c = cJin
 %c=[0,0,0,Initinterval];
@@ -184,15 +177,11 @@ l.Location='northeast';
 title('Inverted polinomial');
 
 % Integration of hopf system
-%xMax = ones(size(c))
 
         mu0=0;   
-        %for mu0=0.0;   
             %x0=sqrt(yzero(1)/2) %Formula of radius of Initial Condition
         x3= 0.00212578945146621; %Formula of radius of Initial Condition
         x4= 0.00202578945146621;
-        %for x3= 0 % Formula of radius of Initial Condition
-        %    x4= 0
         [t,x] = ode45(@(t,x) jinWangModel(t,x,c,a1,a2,k1,k2,s,nhill,reescaleTimeJin,maxBetaJin),tspan,[tspan(1),mu0,x3,x4]);%,options);
         Xwang = [Xwang;x];
         %Variable x3 vs bifurcation parameter
@@ -416,7 +405,6 @@ l.Location='northeast';
 title('Inverted polinomial');
 
 % Integration of hopf system
-%xMax = ones(size(c))
 
         mu0=0;   
         %for mu0=0.0;   
