@@ -1,6 +1,6 @@
 <p align="center">
 
-# MATLAB-HINNDy
+# HINNDy
 
 ## Hidden Identification of Nonlinear Normal form Dynamics 
 
@@ -15,9 +15,6 @@ A compilation of HINNDy Matlab implementations described in a research article. 
 
 # Summary
 
-### HINNDy
-Hidden Identification of Nonlinear Normal form Dynamics
-Put bullet points instead of abstract. 
 #### Authors
 Juan Pablo Munoz Diaz,..., David Gomez Cabrero, Narsis Kiani, Jesper tegner
 
