@@ -38,7 +38,7 @@ cd HINNDy__Code/<script>
 
 The scripts generates the results for: 
   * Prediction of Learned Variable: a figure including the learned variable and the ground truth. 
-  * Noise analysis: a figure with the performance of HINNDy under the influence of noise with 5 different parameters. 
+  * Noise analysis: a figure with the performance of HINNDy under the influence of noise with 5 different variances. 
 
 These are the following scripts that you can find on this GitHub:
 
