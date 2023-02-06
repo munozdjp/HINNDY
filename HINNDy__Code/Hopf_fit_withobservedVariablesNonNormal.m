@@ -91,9 +91,6 @@ opts = optimoptions('lsqcurvefit','Display','off');
 reproduced_data= F1(weightdx,tspan); %
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Plot of State Variable vs Timespan
-% plotCleanState_PredFig_3(tspan,x,mu_observed,yzero,reproduced_data,n)
 plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3)
 
 
