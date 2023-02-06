@@ -132,12 +132,6 @@ p2 =      0.9285;
 p3 =    -0.02771;
 p4 =   0.0003581;
 
-% p1 =    0;
-% %p1 =    0.00;
-% p2 =    1;
-% p3 =   -0;
-% p4 =  0.0;
-
 alpha2= 3;
 gamma=3;
 beta=gamma;
@@ -176,7 +170,6 @@ l=legend('Explicit polinomial for steady state generation','Used polynomial for 
 l.FontSize = 14;
 l.Location='northeast';
 title('Inverted polinomial');
-
 
 
 %integration of the lorentz system
