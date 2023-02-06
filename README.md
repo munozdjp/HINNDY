@@ -4,7 +4,7 @@
 
 ## Hidden Identification of Nonlinear Normal form Dynamics 
 
-A compilation of HINNDY Matlab implementations described in a research article. The implementation resembles those suggested in the paper. I've chosen to concentrate on having every implementation and detail correct.
+A compilation of HINNDy Matlab implementations described in a research article. The implementation resembles those suggested in the paper. I've chosen to concentrate on having every implementation and detail correct.
 
 * [Summary](#Summary)
 * [Code](#Code)
@@ -32,28 +32,28 @@ For additional information, please refer to the [Publication](https://github.com
   
 MATLAB-2020.
 
-Download the [Folder](https://github.com/munozdjp/HINNDy-/tree/main/HINNDy__Code), and run each script in the specific directory cd/HINNDy__Code/<script>
+Download the [Folder](https://github.com/munozdjp/HINNDy-/tree/main/HINNDy__Code), run each script in the specific directory. 
 
-The scripts generates the results for 
-  * Prediction of Learned Variable
+```
+# set working dir
+cd HINNDy__Code/<script>
+```
+
+The scripts generates the results for: 
+  * Prediction of Learned Variable.
   * Noise analysis. 
+
+These are the following scripts that you can find on this GitHub:
+
+1- [Saddle-node bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m): learned hidden variable from switching from lower fix point to upper stable fix point. 
   
-Saddle-node bifurcation:
-* [Code SaddleNode](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m)
-  
-Pithchfork-bifurcation:
-* [Code Pitchfork](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m)
+2- [Pithchfork-bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): 
 
-Hopf-Bifurcation:
-* [Code Hopf](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m)
+3- [Hopf-Bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m):
 
-Hodking-Huxley
-* [Code Hodking-Huxley Dynamical model](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/hodg_Hux_fit_ObservedVariables.m)
+4- [Hodking-Huxley](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/hodg_Hux_fit_ObservedVariables.m):
 
-Fitzhugh-Nagumo
-* [Code Fitzhugh-Nagumo Dynamical Model](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Fitz_Nagumo2th_fit_ObservedVariables.m)
-
-
+5- [Fitzhugh-Nagumo](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Fitz_Nagumo2th_fit_ObservedVariables.m):
 
 # Contributing
 Simply fork the repository and make the appropriate changes to contribute to HINNDy. Once complete, send a pull request and we will evaluate your contributions.
