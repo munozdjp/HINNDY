@@ -11,7 +11,7 @@ A compilation of HINNDY Matlab implementations described in a research article. 
 
 # HINNDy Workflow
 
-![Figure 1](https://user-images.githubusercontent.com/67231886/216831134-8c8a00b7-ed6d-43b1-974b-f3de3f376b19.png)
+![Figure 1](https://user-images.githubusercontent.com/67231886/216912664-756a10b7-17a0-409c-a038-4d578cd2d85d.png)
 
 # Summary
 
