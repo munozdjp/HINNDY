@@ -42,11 +42,11 @@ The scripts generates the results for:
 
 These are the following scripts that you can find on this GitHub:
 
-1- [Saddle-node bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m): prediction for switching fix point. 
+1- [Saddle-node bifurcation](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/SaddleNodeLeft2Rigth.m): prediction for switching fix point. 
   
-2- [Pithchfork-bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): prediction for growing fix point dynamic.
+2- [Pithchfork-bifurcation](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): prediction for growing fix point dynamic.
 
-3- [Hopf-Bifurcation:](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): learned hidden variable on oscillator to fixpoint dynamic. 
+3- [Hopf-Bifurcation](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/Hopf_fit_withobservedVariablesNonNormal.m): learned hidden variable on oscillator to fixpoint dynamic. 
 
 4- [Hodgkin-Huxley](https://github.com/munozdjp/HINNDy-/blob/main/HINNDy__Code/hodg_Hux_fit_ObservedVariables.m): learned hidden variable on voltage discharge on neuron dynamic. 
 
