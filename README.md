@@ -79,11 +79,30 @@ neg_inter = 0;
 
 After runnning this script in matlab_2020 the user can obtain 5 figures:
   
-1 figure: the description of the first polyunomial 
-2 Figure: the description of the state variable 
-3 Figure:   
-..... Añadir la figuras 
+1 figure: Ground truth of alpha polynomial dynamic.
   
+<img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig1_saddlenode.png" alt="My Image" style="width: 399px; height: 300px;">
+  
+  
+2 Figure: State variable when hidden variable is changing over time.
+  
+<img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig2_saddlenode.png" alt="My Image" style="width: 399px; height: 300px;">
+  
+3 Figure:   
+  
+<img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig3_saddlenode.png" alt="My Image" style="width: 646px; height: 300px;">
+
+4 Figure:   
+  
+<img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig4_saddlenode.png" alt="My Image" style="width: 619px; height: 300px;">
+  
+5 Figure:     
+
+<img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig5_saddlenode.png" alt="My Image" style="width: 399px; height: 300px;">
+  
+6 Figure:       
+
+<img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig6_saddlenode.png" alt="My Image" style="width: 417px; height: 300px;">
 
 
 # Contributing
