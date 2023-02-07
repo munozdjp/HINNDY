@@ -8,7 +8,7 @@
 ## Hidden Identification of Nonlinear Normal form Dynamics 
 
 
-This repository contains the HINNDy method applied to the different models.
+This repository contains the HINNDy method applied to the different dynamical systems models.
 
 * [Summary](##Summary)
 * [Scripts](##Scripts)
