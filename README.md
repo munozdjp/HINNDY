@@ -10,9 +10,9 @@
 
 This repository contains the HINNDy method applied to the different models.
 
-* [Summary Alberto](##Summary-Alberto)
+* [Summary](##Summary-Alberto)
 * [Scripts](##Scripts)
-* [Working example saddle node](##Working-example-saddle-node)  
+* [Working example: saddle node](##Working-example-saddle-node)  
 * [Contributing](##Contributing)
 * [License](##License)
 
