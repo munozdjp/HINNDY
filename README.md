@@ -79,27 +79,27 @@ neg_inter = 0;
 
 After runnning this script in matlab_2020 the user can obtain 5 figures:
   
-Fig 1: ground truth of alpha polynomial dynamic.
+Fig 1: shows the ground truth of the alpha polynomial dynamic.
   
 <img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig1_saddlenode.png" alt="My Image" style="width: 399px; height: 300px;">
     
-Fig 2: state variable when hidden variable is changing over time.
+Fig 2: state variable when a hidden variable changes over time.
   
 <img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig2_saddlenode.png" alt="My Image" style="width: 399px; height: 300px;">
   
-Fig 3: state variable vs hidden variable, Hinndy prediction.   
+Fig 3: state variable vs hidden variable, Hinndy prediction. 
   
 <img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig3_saddlenode.png" alt="My Image" style="width: 646px; height: 300px;">
 
-Fig 4: performance of hinndy under different noise perturbations.
+Fig 4: shows how HINNDy works when there are different kinds of noise disturbances.
   
 <img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig4_saddlenode.png" alt="My Image" style="width: 619px; height: 300px;">
   
-Fig 5: noise analysis for one sample of the noise.    
+Fig 5: shows how one sample of noise was analyzed.    
 
 <img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig5_saddlenode.png" alt="My Image" style="width: 399px; height: 300px;">
   
-Fig 6: error distribution for different noise samples.            
+Fig 6: error distribution for different noise samples.        
 
 <img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig6_saddlenode.png" alt="My Image" style="width: 417px; height: 300px;">
 
