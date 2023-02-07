@@ -1,6 +1,6 @@
 <p align="center">
 
-# Añadir zenodo
+[![DOI](https://zenodo.org/badge/340074964.svg)](https://zenodo.org/badge/latestdoi/340074964)
 
   
 # HINNDy
