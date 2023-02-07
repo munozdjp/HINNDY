@@ -10,7 +10,7 @@
 
 This repository contains the HINNDy method applied to the different models.
 
-* [Summary](##Summary-Alberto)
+* [Summary](##Summary)
 * [Scripts](##Scripts)
 * [Working example: saddle node](##Working-example-saddle-node)  
 * [Contributing](##Contributing)
@@ -18,7 +18,7 @@ This repository contains the HINNDy method applied to the different models.
 
 
 
-## Summary Alberto
+## Summary
 
 #### Authors
 Juan Pablo Munoz Diaz,..., David Gomez Cabrero, Narsis Kiani, Jesper tegner
