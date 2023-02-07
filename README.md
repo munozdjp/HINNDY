@@ -10,15 +10,15 @@
 
 This repository contains the HINNDy method applied to the different models.
 
-* [Summary](#Summary)
-* [Scripts](#Scripts)
-* [Working example saddle node](#Working-example-saddle-node)  
-* [Contributing](#Contributing)
-* [License](#License)
+* [Summary Alberto](##Summary-Alberto)
+* [Scripts](##Scripts)
+* [Working example saddle node](##Working-example-saddle-node)  
+* [Contributing](##Contributing)
+* [License](##License)
 
 
 
-# Summary
+## Summary Alberto
 
 #### Authors
 Juan Pablo Munoz Diaz,..., David Gomez Cabrero, Narsis Kiani, Jesper tegner
@@ -33,7 +33,7 @@ For additional information, please refer to the [Publication](https://github.com
 
 ![Figure 1](https://user-images.githubusercontent.com/67231886/216912664-756a10b7-17a0-409c-a038-4d578cd2d85d.png)
   
-# Scripts
+## Scripts
   
 HINDy is entirely developed in MATLAB, tested version 2020. There is no limitation in OS and no specific computational requirement.
 
@@ -110,10 +110,10 @@ The output is the following 5 figures:
 <img src="https://github.com/munozdjp/HINNDy/blob/main/figures%20saddle%20node/fig6_saddlenode.png" alt="My Image" style="width: 417px; height: 300px;">
 
 
-# Contributing
+## Contributing
 Simply fork the repository and make the appropriate changes to contribute to HINNDy. Once complete, send a pull request and we will evaluate your contributions.
 
-# License
+## License
 HINNDy is licensed under the GNU License. Refer to LICENSE for additional details.
   
 
