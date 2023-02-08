@@ -35,7 +35,7 @@ For additional information, please refer to the [Publication](https://github.com
   
 ## Scripts
   
-HINDy is entirely developed in MATLAB, tested version 2020. There is no limitation in OS and no specific computational requirement.
+HINNDy is entirely developed in MATLAB, tested version 2020. There is no limitation in OS and no specific computational requirement.
 
 First, clone this repository and set the working directory:
 
