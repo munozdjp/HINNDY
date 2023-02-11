@@ -21,7 +21,7 @@ This repository contains the HINNDy method applied to the different dynamical sy
 ## Summary
 
 #### Authors
-Juan Pablo Munoz Diaz, Subash Balsamy, Juan P. Bernal, Ali Balubaid,..., David Gomez Cabrero, Narsis Kiani, Jesper tegner
+Juan Pablo Munoz Diaz, Subash Balsamy, Juan P. Bernal, Ali Balubaid,..., David Gomez Cabrero, Narsis Kiani, Jesper Tegner
 
 #### Abstract
 
