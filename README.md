@@ -30,9 +30,8 @@ Here we explore the idea of using normal forms as universal, scalable, and minim
 For additional information, please refer to the [Publication](https://github.com/munozdjp/HINNDY/tree/main/HINNDy__Code)
 
 #### HINNDy Workflow
+![Figure 1](https://user-images.githubusercontent.com/67231886/218265880-1e5d960e-bbb8-4b12-a85f-4457fb79361b.png)
 
-![Figure 1](https://user-images.githubusercontent.com/67231886/216912664-756a10b7-17a0-409c-a038-4d578cd2d85d.png)
-  
 ## Scripts
   
 HINNDy is entirely developed in MATLAB, tested version 2020. There is no limitation in OS and no specific computational requirement.
