@@ -52,15 +52,15 @@ Each script generates the results for:
 
 The list of the scripts that you can find on this GitHub:
 
-1- [Saddle-node bifurcation](https://github.com/munozdjp/IHCV-/blob/main/IHCV__Code/SaddleNodeLeft2Rigth.m): prediction for switching fix point. 
+1- [Saddle-node bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/SaddleNodeLeft2Rigth.m): prediction for switching fix point. 
   
-2- [Pitchfork-bifurcation](https://github.com/munozdjp/IHCV-/blob/main/IHCV__Code/Hopf_fit_withobservedVariablesNonNormal.m): prediction for growing fix point dynamic.
+2- [Pitchfork-bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Hopf_fit_withobservedVariablesNonNormal.m): prediction for growing fix point dynamic.
 
-3- [Hopf-Bifurcation](https://github.com/munozdjp/IHCV-/blob/main/IHCV__Code/Hopf_fit_withobservedVariablesNonNormal.m): learned hidden variable on oscillator to fixpoint dynamic. 
+3- [Hopf-Bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Hopf_fit_withobservedVariablesNonNormal.m): learned hidden variable on oscillator to fixpoint dynamic. 
 
-4- [Hodgkin-Huxley](https://github.com/munozdjp/IHCV-/blob/main/IHCV__Code/hodg_Hux_fit_ObservedVariables.m): learned hidden variable on voltage discharge on neuron dynamic. 
+4- [Hodgkin-Huxley](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/hodg_Hux_fit_ObservedVariables.m): learned hidden variable on voltage discharge on neuron dynamic. 
 
-5- [FitzHugh-Nagumo](https://github.com/munozdjp/IHCV-/blob/main/IHCV__Code/Fitz_Nagumo2th_fit_ObservedVariables.m): learned hidden variable on nerve cell resonant regime. 
+5- [FitzHugh-Nagumo](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Fitz_Nagumo2th_fit_ObservedVariables.m): learned hidden variable on nerve cell resonant regime. 
 
 The extra scripts are complementary validation of IHCV method. 
   
@@ -69,7 +69,7 @@ Working example: saddle node
 
 The saddle node bifurcation is a dynamical system that shows a switching point dynamic, from a lower state to a high upper state. 
 
-Here you can find the complete script of [saddle node](https://github.com/munozdjp/IHCV-/blob/main/IHCV__Code/SaddleNodeLeft2Rigth.m) 
+Here you can find the complete script of [saddle node](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/SaddleNodeLeft2Rigth.m) 
   
 First, we need to define the static variables. We recommend using the default values:
 
