@@ -3,12 +3,12 @@
 [![DOI](https://zenodo.org/badge/340074964.svg)](https://zenodo.org/badge/latestdoi/340074964)
 
   
-# HINNDy
+# IHCV
 
-## Hidden Identification of Nonlinear Normal form Dynamics 
+## Identification of Hidden Control Variables 
 
 
-This repository contains the HINNDy method applied to the different dynamical systems models.
+This repository contains the IHCV method applied to the different dynamical systems models.
 
 * [Summary](##Summary)
 * [Scripts](##Scripts)
