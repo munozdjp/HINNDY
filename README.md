@@ -11,10 +11,10 @@
 This repository contains the IHCV method applied to the different dynamical systems models.
 
 * [Summary](#Summary)
-* [Scripts](##Scripts)
-* [Working example: saddle node](##Working-example-saddle-node)  
-* [Contributing](##Contributing)
-* [License](##License)
+* [Scripts](#Scripts)
+* [Working example: saddle node](#Working-example-saddle-node)  
+* [Contributing](#Contributing)
+* [License](#License)
 
 
 
