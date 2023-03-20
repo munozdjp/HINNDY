@@ -92,7 +92,7 @@ The output is the following 5 figures:
   
 <img src="https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/fig2_saddlenode.png" alt="My Image" style="width: 399px; height: 300px;">
   
-**Fig 3:** state variable vs hidden variable, Hinndy prediction. 
+**Fig 3:** state variable vs hidden variable, IHCV prediction. 
   
 <img src="https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/fig3_saddlenode.png" alt="My Image" style="width: 646px; height: 300px;">
 
