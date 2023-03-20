@@ -11,7 +11,7 @@
 % GNU General Public License for more details.
 % 
 % You should have received a copy of the GNU General Public License
-% along with this program.  If not, see <https://github.com/munozdjp/HINNDy/blob/main/LICENSE>.
+% along with this program.  If not, see <https://github.com/munozdjp/IHCV/blob/main/LICENSE>.
 
 %The sadddle note bifurcation it do not converges to the origin
 %i.e. moving from left to right, it goes to infinity after reachin the biff) Hence we use decreasing alpha 
