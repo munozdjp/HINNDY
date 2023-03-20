@@ -30,7 +30,7 @@ Here we explore the idea of using normal forms as universal, scalable, and minim
 For additional information, please refer to the [Publication](https://github.com/munozdjp/HINNDY/tree/main/IHCV__Code)
 
 #### IHCV Workflow
-![Figure 1](https://user-images.githubusercontent.com/67231886/218265880-1e5d960e-bbb8-4b12-a85f-4457fb79361b.png)
+![Figure 1](https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/IHCVWorkflow.png)
 
 ## Scripts
   
