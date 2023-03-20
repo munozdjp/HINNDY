@@ -18,7 +18,7 @@ This repository contains the IHCV method applied to the different dynamical syst
 
 
 
-## Summary
+##Summary
 
 #### Authors
 Juan Pablo Munoz Diaz, Subash Balsamy, Juan P. Bernal, Ali Balubaid, Alberto Maillo, Vincenzo Lagani, David Gomez Cabrero, Narsis Kiani, Jesper Tegner
