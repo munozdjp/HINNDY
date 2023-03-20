@@ -32,6 +32,7 @@ For additional information, please refer to the [Publication](https://github.com
 #### IHCV Workflow
 ![Figure 1](https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/IHCVWorkflow.png)
 
+
 ## Scripts
   
 IHCV is entirely developed in MATLAB, tested version 2020. There is no limitation in OS and no specific computational requirement.
