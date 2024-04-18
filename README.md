@@ -56,7 +56,7 @@ The list of the scripts that you can find on this GitHub:
 
 1- [Saddle-node bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/SaddleNodeLeft2Rigth.m): prediction for switching fix point. 
   
-2- [Pitchfork-bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Hopf_fit_withobservedVariablesNonNormal.m): prediction for growing fix point dynamic.
+2- [Pitchfork-bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Pitchfork_fit_Left2Right.m): prediction for growing fix point dynamic.
 
 3- [Hopf-Bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Hopf_fit_withobservedVariablesNonNormal.m): learned hidden variable on oscillator to fixpoint dynamic. 
 
