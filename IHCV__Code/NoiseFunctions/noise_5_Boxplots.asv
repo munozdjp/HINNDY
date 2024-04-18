@@ -109,54 +109,30 @@ function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufun
     
         violinmatrix = [violinmatrix, distanceVector];
         if i == iteration
-        figure(5);
-        % If you need to use subplot, uncomment and adjust the next line accordingly
-        % subplot(rowsFig, columnnsFig, [rowsFig * columnnsFig - length(rowsFig):1:rowsFig * columnnsFig])
-        plot(VectorOfNoise, distanceVector);
-        xlabel('Noise Variance', 'FontName', 'Times New Roman', 'FontSize', 16);  % Set X label with Times New Roman font
-        ylabel('L2 Error', 'FontName', 'Times New Roman', 'FontSize', 16);  % Corrected Y label text and set font
-        title('Iteration = 20', 'FontName', 'Times New Roman', 'FontSize', 16);  % Set a fixed title with Times New Roman font
-        
-        set(gca, 'FontSize', 16);  % Set the font size of the axes
-        
-        % l = legend('Error');  % Define the legend to label the plot data
-        % l.FontSize = 14;      % Set font size of the legend
-        % l.Location = 'northeast';  % Position the legend in the top right corner
-
+            figure(5)
+            %subplot(rowsFig,columnnsFig,[rowsFig*columnnsFig-lenght(rowsFig):1:rowsFig*columnnsFig])
+            plot(VectorOfNoise, distanceVector)
+            xlabel('Noise Variance')
+            ylabel('L2 Error of polynomial coefficiente')
+            title(['error vs Noise , iteration = ',num2str(iteration)])
+            set(gca,'FontSize',16);
+            l=legend('error');
+            l.FontSize = 14;
+            l.Location='northeast';
         end
     end
     % print('Predicted weights for each variance')
     VectorAnd_distances = [[c(1:(length(c)-1)); comparisonVectorCum],[0; distanceVector]]
 
     %% [h,L,MX,MED]=violin(violinmatrix')%,'xlabel',[0:0.2:1.8])
-    figure(6);
-    % If subplot or other configuration is needed, include it here
-    arraystring = arrayfun(@num2str, VectorOfNoise, 'UniformOutput', false);
-    h = boxplot(violinmatrix', 'Labels', arraystring);
-    
-    % Change line width and color
-    set(h, {'LineWidth', 'Color'}, {2, [0 0 0]}); % Set all lines to width 2 and color black
-    
-    % Set properties for axes
-    set(gca, 'FontSize', 16, 'FontName', 'Times New Roman');
-    
-    % Label and title configurations
-    ylabel('Error IHCV', 'FontSize', 16, 'FontName', 'Times New Roman');
-    xlabel('Noise variance ', 'FontSize', 16, 'FontName', 'Times New Roman');
-    title([name, ' Bifurcation-Normalized Error '], 'FontSize', 16, 'FontName', 'Times New Roman');
-    
-    % To ensure all parts of the box are black, additional handle adjustments are needed:
-    boxColors = findobj(gca, 'Tag', 'Box'); % Find the boxes
-    set(boxColors, 'Color', [0 0 0]); % Set color of boxes to black
-    
-    medLines = findobj(gca, 'Tag', 'Median'); % Find the median lines
-    set(medLines, 'Color', [0 0 0]); % Set color of median lines to black
-    
-    whiskers = findobj(gca, 'Tag', 'Whisker'); % Find the whiskers
-    set(whiskers, 'Color', [0 0 0]); % Set color of whiskers to black
-    
-    outliers = findobj(gca, 'Tag', 'Outliers'); % Find the outliers
-    set(outliers, 'MarkerEdgeColor', [0 0 0]); % Set color of outliers to black
-
+    figure(6)
+    %subplot(rowsFig,columnnsFig,[rowsFig*columnnsFig-length(rowsFig):1:rowsFig*columnnsFig])
+    arraystring = arrayfun(@num2str,VectorOfNoise,'Uni',0);
+    h = boxplot(violinmatrix','Labels',arraystring); 
+    set(h,{'linew'},{2})
+    ylabel('Error IHCV','FontSize',16)
+    xlabel('Noise variance ','FontSize',16)
+    title([name,' Bifurcation-Normalized Error '],'FontSize',16)
+    set(gca,'FontSize',16);
 
 end

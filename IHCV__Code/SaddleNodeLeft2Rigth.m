@@ -1,27 +1,12 @@
-% Copyright (C) 2023 (King Abdullah University of Science and Technology)
-% 
-% This program is free software: you can redistribute it and/or modify
-% it under the terms of the GNU General Public License as published by
-% the Free Software Foundation, either version 3 of the License, or
-% any later version.
-% 
-% This program is distributed in the hope that it will be useful,
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-% GNU General Public License for more details.
-% 
-% You should have received a copy of the GNU General Public License
-% along with this program.  If not, see <https://github.com/munozdjp/IHCV/blob/main/LICENSE>.
-
-%The sadddle note bifurcation it do not converges to the origin
-%i.e. moving from left to right, it goes to infinity after reachin the biff) Hence we use decreasing alpha 
-
+%The sadddle note bifurcation has problem when converging to the origin
+%i.e. moving from left to right(it goes to infinity after reachin the biff
+%point)
 clear all, close all, clc
 figpath = '../figures/';
 addpath('./utils');
 addpath('./NoiseFunctions/');
 addpath('./plottingfunctions/');
-
+rng(1)
 %Number of variables
 n = 3;
 
@@ -54,18 +39,18 @@ yzero = c(1)*(tspan+tinterval(1))+c(2)*(tspan+tinterval(1)).^2 ...
 % = -c(1)- 2*c(2)* (-y(1)+c(4)) - 3*c(3)*(-y(1)+c(4))^2;
 %plot of inverted polinomial
 figure(1)
-%plot(tspan2,y,'r-',tspan,y2,'b--')
 plot(tspan,y,'r-',tspan,y2,'b--')
-xlabel('time')
-ylabel('beta parameter')
+xlabel('Time', 'FontName', 'Times New Roman')  % Set xlabel font to Times New Roman
+ylabel('\alpha')  % Use \alpha for the Greek letter alpha
 hold on
 xline(0,'k--');
 set(gca,'FontSize',16);
-l=legend('Explicit polinomial for steady state generation','implicit polinmial for ODE data generation');
-l.FontSize = 14;
-l.Location='northeast';
-title('Inverted polinomial');
-
+l = legend('Explicit polynomial steady-state generation', 'Implicit polynomial - ODE data generation');
+l.Position = [0.5, 0.84, 0.07, 0.071];
+l.FontSize = 12;
+% l.Location='northeast';
+title('Inverted polynomial');
+%%
 %Integration of hopf system
 
 %reescaling is zero for my origina variables. 
@@ -77,19 +62,21 @@ for mu0=[yzero(1)]
         [t,x] = ode45(@(t,x) saddlenodeNewPoli(t,x,c,xMax,1,1),tspan,[tspan(1),mu0,x0],options);
          X = [X;x];
          % Variable x3 vs bifurcation parameter
-            figure(2)
-            hold on
-            plot(x(:,2),x(:,3),'b-')
-            
-            xlabel('Beta')
-            ylabel('x_3')
-            xline(0,'k--');
-            set(gca,'FontSize',16);
-            l=legend('state variable vs bifurcation');
-            l.FontSize = 14;
-            l.Location='northeast';
-            title('Saddle  State vsparameter')
-            hold off    
+figure(2)
+hold on
+plot(x(:,2),x(:,3),'b-')
+
+xlabel('\alpha', 'FontName', 'Times New Roman')  % Alpha symbol and Times New Roman font for the xlabel
+ylabel('State', 'FontName', 'Times New Roman')  % Times New Roman font for the ylabel
+xline(0,'k--');
+set(gca, 'FontSize', 16, 'FontName', 'Times New Roman');  % Set the axes font to Times New Roman
+l = legend('state variable vs bifurcation parameter');
+l.FontSize = 14;
+l.FontName = 'Times New Roman';  % Set the legend font to Times New Roman
+l.Location = 'northeast';
+title('State vs \alpha (t)', 'FontName', 'Times New Roman')  % Use LaTeX markup for alpha and set font to Times New Roman
+hold off
+  
     end
 end
 
