@@ -15,6 +15,7 @@ This repository contains the IHCV method applied to the different dynamical syst
 * [Working example: saddle node](#Working-example-saddle-node)  
 * [Contributing](#Contributing)
 * [License](#License)
+* [Requirements](#Requirements)
 
 
 
@@ -116,4 +117,15 @@ Simply fork the repository and make the appropriate changes to contribute to IHC
 ## License
 IHCV is licensed under the GNU License. Refer to LICENSE for additional details.
   
+## Requirements
+
+Before running the scripts, please ensure you have the following MATLAB toolboxes installed:
+
+- Optimization Toolbox
+- SimBiology
+- Statistics and Machine Learning Toolbox
+
+These toolboxes are essential for the execution of the IHCV method scripts. They provide functions and features that are not available in the standard MATLAB environment.
+
+To install these toolboxes, you can use the Add-On Explorer in MATLAB. Simply go to the Home tab, and in the Environment section, click Add-Ons > Get Add-Ons. Search for the required toolboxes and install them.
 
