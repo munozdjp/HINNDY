@@ -100,7 +100,7 @@ The output is the following 5 figures:
 
 **Fig 4:** shows how IHCV works when there are different kinds of noise disturbances.
   
-<img src="https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/fig4_saddleNode.png" alt="My Image" style="width: 619px; height: 300px;">
+<img src="https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/fig4_saddlenode.png" alt="My Image" style="width: 619px; height: 300px;">
   
 **Fig 5:** shows how one sample of noise was analyzed.    
 
@@ -108,7 +108,7 @@ The output is the following 5 figures:
   
 **Fig 6:** error distribution for different noise samples.        
 
-<img src="https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/fig6_saddlenodeV2.png" alt="My Image" style="width: 417px; height: 300px;">
+<img src="https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/fig6_saddlenode.png" alt="My Image" style="width: 417px; height: 300px;">
 
 
 ## Contributing
