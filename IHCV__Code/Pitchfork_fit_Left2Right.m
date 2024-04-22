@@ -64,9 +64,12 @@ c=[1,0,0,Endinterval];
 figure(1)
 plot(tspan2,y,'r-',tspan,y2,'b--',tspan,yzero,'k--')
 xlabel('Time', 'FontName', 'Times New Roman')  % Set xlabel font to Times New Roman
-ylabel('\alpha')  % Use \alpha for the Greek letter alpha
 
-xline(0,'k--');
+xlim([min(tspan) max(tspan)]);
+ylabel('\alpha')  % Use \alpha for the Greek letter alpha
+ylim([min(y) max(y)]);
+
+% xline(0,'k--');
 set(gca,'FontSize',16);
 l=legend('Explicit polynomial steady-state generation', 'Implicit polynomial - ODE data generation', 'Polynomial moved - positive axis');
 l.Position = [0.46, 0.83, 0.07, 0.071];
