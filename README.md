@@ -60,7 +60,7 @@ The list of the scripts that you can find on this GitHub:
 
 3- [Hopf-Bifurcation](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Hopf_fit_withobservedVariablesNonNormal.m): learned hidden variable on oscillator to fixpoint dynamic. 
 
-4- [Hodgkin-Huxley](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/hodg_Hux_fit_ObservedVariables.m): learned hidden variable on voltage discharge on neuron dynamic. 
+4- [Lorentz](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Lorentz_fit_ObservedVariables.m): learned hidden variable on different regimes of chaotic system. 
 
 5- [FitzHugh-Nagumo](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/Fitz_Nagumo2th_fit_ObservedVariables.m): learned hidden variable on nerve cell resonant regime. 
 
