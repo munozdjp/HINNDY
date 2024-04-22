@@ -1,18 +1,3 @@
-% Copyright (C) 2023 (King Abdullah University of Science and Technology)
-% 
-% This program is free software: you can redistribute it and/or modify
-% it under the terms of the GNU General Public License as published by
-% the Free Software Foundation, either version 3 of the License, or
-% any later version.
-% 
-% This program is distributed in the hope that it will be useful,
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-% GNU General Public License for more details.
-% 
-% You should have received a copy of the GNU General Public License
-% along with this program.  If not, see <https://github.com/munozdjp/IHCV/blob/main/LICENSE>.
-
 clear all, close all, clc
 figpath = '../figures/';
 addpath('./utils');
@@ -22,6 +7,28 @@ addpath('./plottingfunctions/');
 omega = 1;
 A = 1;
 %Number of variables
+%%
+rng(1)
+% Parameter to specify the type of analysis
+analysisType = 'Hopf';  % Change this to 'pitchfork' as needed when running different scripts
+
+% Base directory for results
+scriptFullPath = mfilename('fullpath');
+[scriptPath, ~, ~] = fileparts(scriptFullPath);
+resultsBasePath = fullfile(scriptPath, 'Results figures');
+
+% Dynamic directory based on the analysis type
+analysisPath = fullfile(resultsBasePath, analysisType);
+
+% Ensure the directory exists
+if ~exist(analysisPath, 'dir')
+    mkdir(analysisPath);
+end
+
+% Define the path for the PDF file within the analysis directory
+pdfPath = fullfile(analysisPath, 'ResultsFigures.pdf');
+
+%%
 n = 4;
 
 dt=0.001; %timestep
@@ -45,15 +52,17 @@ yzero=c(1)*(-tspan+tinterval(2) )+c(2)*(-tspan...
 %plot of inverted polinomial
 figure(1)
 plot(tspan2,y,'r-',tspan,yzero,'b--')
-xlabel('time')
-ylabel('beta parameter')
+xlabel('Time', 'FontName', 'Times New Roman')  % Set xlabel font to Times New Roman
+ylabel('\alpha')  % Use \alpha for the Greek letter alpha
 hold on
 xline(0,'k--');
 set(gca,'FontSize',16);
-l=legend('Explicit polinomial for steady state generation','Used polynomial for ODE data generation');
-l.FontSize = 14;
-l.Location='northeast';
-title('Inverted polinomial');
+l = legend('Explicit polynomial steady-state generation', 'Implicit polynomial - ODE data generation');
+l.Position = [0.5, 0.84, 0.07, 0.071];
+l.FontSize = 12;
+% l.Location='northeast';
+title('Inverted polynomial');
+exportgraphics(gcf, pdfPath, 'ContentType', 'vector', 'Append', true);
 
 % Integration of hopf system
 xMax = ones(size(c));
@@ -64,20 +73,23 @@ for mu0=[yzero(1)]    ;
     %x0=sqrt(yzero(1)/2) %Formula of radius of Initial Condition
     for x0=sqrt(yzero(1)/2)/xMax(3)+traslation%Formula of radius of Initial Condition
         [t,x] = ode45(@(t,x) hopfPolyOrder3NONNormal(t,x,c,omega,A,traslation,xMax),tspan,[tspan(1),mu0,x0,x0],options);
-         X = [X;x];
+        X = [X;x];
          %Variable x3 vs bifurcation parameter
-            figure(2)
-            hold on
-            plot(x(:,2),x(:,3),'b-')
-            xlabel('Beta')
-            ylabel('x_3')
-            xline(0,'k--');
-            set(gca,'FontSize',16);
-            l=legend('Trajectory using numerical integration');
-            l.FontSize = 14;
-            l.Location='northeast';
-            title('State variable vs Biffurcation parameter')
-            hold off    
+        figure
+        hold on
+        plot(x(:,2),x(:,3),'b-')
+        xlabel('\alpha', 'FontName', 'Times New Roman')  % Alpha symbol and Times New Roman font for the xlabel
+        ylabel('State', 'FontName', 'Times New Roman')  % Times New Roman font for the ylabel
+        xline(0,'k--');
+        set(gca, 'FontSize', 16, 'FontName', 'Times New Roman');  % Set the axes font to Times New Roman
+        % l = legend('state variable vs bifurcation parameter');
+        % l.FontSize = 14;
+        % l.FontName = 'Times New Roman';  % Set the legend font to Times New Roman
+        % l.Location = 'northeast';
+        title('State vs \alpha (t)', 'FontName', 'Times New Roman')  % Use LaTeX markup for alpha and set font to Times New Roman
+        hold off
+        exportgraphics(gcf, pdfPath, 'ContentType', 'vector', 'Append', true);
+ 
     end
 end
 xtrajectories(:,i)=[x(:,3)];
@@ -106,9 +118,12 @@ opts = optimoptions('lsqcurvefit','Display','off');
 reproduced_data= F1(weightdx,tspan); %
 
 
-plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Plot of State Variable vs Timespan
+% plotCleanState_PredFig_3(tspan,x,mu_observed,yzero,reproduced_data,n)
+plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3,pdfPath)
 
-
+%%
 % Mu with Noise
 noise_scale=0.018;
 
@@ -125,17 +140,19 @@ comparisonVector = [c(1:3);weightdx;weightdxNoise];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-plotNoisyStateFig_4(tspan,xNoisy,mu_obsNoisy,yzero,reproduced_dataNoisy,n)
+plotState_Beta_time_Pred(tspan,xNoisy,mu_obsNoisy,yzero,reproduced_dataNoisy,n,4,pdfPath)
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-plotCleanNoiseStateFig_5(tspan,Noise_normalized,yzero,n)
+% plotCleanNoiseStateFig_5(tspan,Noise_normalized,yzero,n)
 
 
 %% Noise analysis 
 % Creation of comparison vector for different noise variances: 
-VectorOfNoise = [0:0.009:0.1];
+VectorOfNoise = [0:0.1:0.5];
 name = mfilename;
-name = name(1:10);
-noise_Scale_maximum(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
+name = name(1:4);
+% noise_Scale_maximum(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
+figure
+noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc,pdfPath);
 
