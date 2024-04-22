@@ -7,6 +7,27 @@ addpath('./utils');
 addpath('./NoiseFunctions/');
 addpath('./plottingfunctions/');
 rng(1)
+%%
+% Parameter to specify the type of analysis
+analysisType = 'saddle';  % Change this to 'pitchfork' as needed when running different scripts
+
+% Base directory for results
+scriptFullPath = mfilename('fullpath');
+[scriptPath, ~, ~] = fileparts(scriptFullPath);
+resultsBasePath = fullfile(scriptPath, 'Results figures');
+
+% Dynamic directory based on the analysis type
+analysisPath = fullfile(resultsBasePath, analysisType);
+
+% Ensure the directory exists
+if ~exist(analysisPath, 'dir')
+    mkdir(analysisPath);
+end
+
+% Define the path for the PDF file within the analysis directory
+pdfPath = fullfile(analysisPath, 'ResultsFigures.pdf');
+
+%%
 %Number of variables
 n = 3;
 
@@ -50,6 +71,8 @@ l.Position = [0.5, 0.84, 0.07, 0.071];
 l.FontSize = 12;
 % l.Location='northeast';
 title('Inverted polynomial');
+exportgraphics(gcf, pdfPath, 'ContentType', 'vector', 'Append', true);
+
 %%
 %Integration of hopf system
 
@@ -62,20 +85,21 @@ for mu0=[yzero(1)]
         [t,x] = ode45(@(t,x) saddlenodeNewPoli(t,x,c,xMax,1,1),tspan,[tspan(1),mu0,x0],options);
          X = [X;x];
          % Variable x3 vs bifurcation parameter
-figure(2)
-hold on
-plot(x(:,2),x(:,3),'b-')
-
-xlabel('\alpha', 'FontName', 'Times New Roman')  % Alpha symbol and Times New Roman font for the xlabel
-ylabel('State', 'FontName', 'Times New Roman')  % Times New Roman font for the ylabel
-xline(0,'k--');
-set(gca, 'FontSize', 16, 'FontName', 'Times New Roman');  % Set the axes font to Times New Roman
-l = legend('state variable vs bifurcation parameter');
-l.FontSize = 14;
-l.FontName = 'Times New Roman';  % Set the legend font to Times New Roman
-l.Location = 'northeast';
-title('State vs \alpha (t)', 'FontName', 'Times New Roman')  % Use LaTeX markup for alpha and set font to Times New Roman
-hold off
+    figure(2)
+    hold on
+    plot(x(:,2),x(:,3),'b-')
+    
+    xlabel('\alpha', 'FontName', 'Times New Roman')  % Alpha symbol and Times New Roman font for the xlabel
+    ylabel('State', 'FontName', 'Times New Roman')  % Times New Roman font for the ylabel
+    xline(0,'k--');
+    set(gca, 'FontSize', 16, 'FontName', 'Times New Roman');  % Set the axes font to Times New Roman
+    % l = legend('state variable vs bifurcation parameter');
+    % l.FontSize = 14;
+    % l.FontName = 'Times New Roman';  % Set the legend font to Times New Roman
+    % l.Location = 'northeast';
+    title('State vs \alpha (t)', 'FontName', 'Times New Roman')  % Use LaTeX markup for alpha and set font to Times New Roman
+    hold off
+    exportgraphics(gcf, pdfPath, 'ContentType', 'vector', 'Append', true);
   
     end
 end
@@ -103,7 +127,7 @@ reproduced_data= F1(weightdx,tspan);
 
 
 %plot of beta: real VS polinomial fit VS steady equations
-plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3)
+plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,3,pdfPath)
 
 %% Mu with ratio State-Noise
 
@@ -128,5 +152,5 @@ VectorOfNoise = [0:0.1:0.5];
 name = mfilename;
 name = name(1:10);
 %noise_Scale_maximum(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
-
-noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
+figure
+noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc,pdfPath)
