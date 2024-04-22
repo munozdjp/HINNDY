@@ -1,4 +1,4 @@
-function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc)
+function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufunc,pdfPath)
     violinmatrix = [];
     iteration = 20;
     for i = [1:iteration]
@@ -12,6 +12,7 @@ function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufun
         columnnsFig = length(indexToPlot);
         rowsFig = 4;
         counterif = 0;
+        % figure
         for noise_scale = VectorOfNoise  
             forindex = forindex+1;
             %Create a for loop for different noise structures: 
@@ -42,7 +43,10 @@ function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufun
             % Here I need to create the figures for each iteration
             if sum(forindex == indexToPlot)==1 && i==iteration
                 counterif = counterif+1;
-                figure(4)
+                %for pitchfork is the plot (5)
+                %for saddle is the plot (4)
+                
+                figure(gcf)
 
                 % Subplot 1
                 subplot(rowsFig, columnnsFig, counterif)
@@ -77,9 +81,9 @@ function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufun
                 hold on
                 plot(tspan,reproduced_dataNoisy,'b--','LineWidth',1); % Beta from polynomial fit
                 set(gca,'FontSize',16, 'FontName', 'Times New Roman');
-                l1 = legend('Real Beta', 'Prediction', 'FontName', 'Times New Roman', 'FontSize', 16, 'Location', 'northeast');
+                l1 = legend('Real Beta', 'Prediction', 'FontName', 'Times New Roman', 'FontSize', 12, 'Location', 'northeast');
                 % legend('Real Beta', 'Prediction', 'FontName', 'Times New Roman', 'FontSize', 16, 'Location', 'northeast');
-                l1.Position = [0.9, 0.37, 0.1, 0.1]; %(Near the top left)    
+                l1.Position = [0.92, 0.4, 0.06, 0.052]; %(Near the top left)    
                 title(['Prediction = ', num2str(noise_scale)], 'FontName', 'Times New Roman')
                 hold off
                 
@@ -98,7 +102,7 @@ function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufun
                 % Manually set the legend position
                 % l.Position = [x y width height];
                 % Example: l.Position = [0.7, 0.7, 0.2, 0.1]; Adjust the values accordingly
-                l2.Position = [0.9, 0.16, 0.1, 0.1]; %(Near the top left)
+                l2.Position = [0.92, 0.19, 0.06, 0.052]; %(Near the top left)
                 title(['Noise = ', num2str(noise_scale)], 'FontName', 'Times New Roman')
                 hold off
                 % Global title
@@ -106,33 +110,37 @@ function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufun
 
             end
         end
-    
+        
         violinmatrix = [violinmatrix, distanceVector];
         if i == iteration
-        figure(5);
-        % If you need to use subplot, uncomment and adjust the next line accordingly
-        % subplot(rowsFig, columnnsFig, [rowsFig * columnnsFig - length(rowsFig):1:rowsFig * columnnsFig])
-        plot(VectorOfNoise, distanceVector);
-        xlabel('Noise Variance', 'FontName', 'Times New Roman', 'FontSize', 16);  % Set X label with Times New Roman font
-        ylabel('L2 Error', 'FontName', 'Times New Roman', 'FontSize', 16);  % Corrected Y label text and set font
-        title('Iteration = 20', 'FontName', 'Times New Roman', 'FontSize', 16);  % Set a fixed title with Times New Roman font
-        
-        set(gca, 'FontSize', 16);  % Set the font size of the axes
-        
-        % l = legend('Error');  % Define the legend to label the plot data
-        % l.FontSize = 14;      % Set font size of the legend
-        % l.Location = 'northeast';  % Position the legend in the top right corner
-
+            set(gcf, 'Position', [100, 100, 1600, 1200]);
+            exportgraphics(gcf, pdfPath, 'ContentType', 'vector', 'Append', true);
+            figure;
+            % If you need to use subplot, uncomment and adjust the next line accordingly
+            % subplot(rowsFig, columnnsFig, [rowsFig * columnnsFig - length(rowsFig):1:rowsFig * columnnsFig])
+            plot(VectorOfNoise, distanceVector);
+            xlabel('Noise Variance', 'FontName', 'Times New Roman', 'FontSize', 16);  % Set X label with Times New Roman font
+            ylabel('L2 Error', 'FontName', 'Times New Roman', 'FontSize', 16);  % Corrected Y label text and set font
+            title('Iteration = 20', 'FontName', 'Times New Roman', 'FontSize', 16);  % Set a fixed title with Times New Roman font
+            
+            set(gca, 'FontSize', 16);  % Set the font size of the axes
+            
+            % l = legend('Error');  % Define the legend to label the plot data
+            % l.FontSize = 14;      % Set font size of the legend
+            % l.Location = 'northeast';  % Position the legend in the top right corner
+            exportgraphics(gcf, pdfPath, 'ContentType', 'vector', 'Append', true);
         end
     end
     % print('Predicted weights for each variance')
     VectorAnd_distances = [[c(1:(length(c)-1)); comparisonVectorCum],[0; distanceVector]]
 
     %% [h,L,MX,MED]=violin(violinmatrix')%,'xlabel',[0:0.2:1.8])
-    figure(6);
+    figure;
     % If subplot or other configuration is needed, include it here
     arraystring = arrayfun(@num2str, VectorOfNoise, 'UniformOutput', false);
     h = boxplot(violinmatrix', 'Labels', arraystring);
+    % h = boxplot(violinmatrix', 'Labels', arraystring, 'Whisker', Inf, 'Symbol', ''); % Inf whisker length and no outlier plot
+    % h = boxplot(violinmatrix', 'Labels', arraystring, 'Symbol', ''); % Inf whisker length and no outlier plot
     
     % Change line width and color
     set(h, {'LineWidth', 'Color'}, {2, [0 0 0]}); % Set all lines to width 2 and color black
@@ -158,5 +166,5 @@ function noise_5_Boxplots(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mufun
     outliers = findobj(gca, 'Tag', 'Outliers'); % Find the outliers
     set(outliers, 'MarkerEdgeColor', [0 0 0]); % Set color of outliers to black
 
-
+    exportgraphics(gcf, pdfPath, 'ContentType', 'vector', 'Append', true);
 end

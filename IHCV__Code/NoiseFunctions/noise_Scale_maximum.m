@@ -116,7 +116,7 @@ function noise_Scale_maximum(F1,weights0, tspan, x,c,yzero,VectorOfNoise,name,mu
             l.Location='northeast';
         end
     end
-    print('Predicted weights for each variance')
+    disp('Predicted weights for each variance')
     VectorAnd_distances = [[c(1:(length(c)-1));comparisonVectorCum],[0;distanceVector]]
 
     %% [h,L,MX,MED]=violin(violinmatrix')%,'xlabel',[0:0.2:1.8])

@@ -1,6 +1,6 @@
 function plotNoisyStateFig_5(tspan,xNoisy,mu_obsNoisy,yzero,reproduced_dataNoisy,n)
     if n == 4
-        figure(5)%figure 2 in the preceding example 
+        figure %figure 2 in the preceding example 
         subplot(2,4,1)
         hold on
         plot(tspan,xNoisy(:,3),'b-')
@@ -84,7 +84,7 @@ function plotNoisyStateFig_5(tspan,xNoisy,mu_obsNoisy,yzero,reproduced_dataNoisy
         title('Noisy State x4 vs alpha')
 
      elseif n == 3
-        figure(5)
+        figure
         subplot(2,3,1)
         hold on
         plot(tspan,xNoisy(:,3),'b-')

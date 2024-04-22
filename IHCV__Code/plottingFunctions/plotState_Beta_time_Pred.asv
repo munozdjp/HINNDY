@@ -31,13 +31,10 @@ function plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,nf
         set(gca,'FontSize',16, 'FontName', 'Times New Roman');
         if contains(pdfPath, 'Lorentz')
             ylim([0 6000]);  % Set y-axis limits for 'Lorentz' analysis
-        elseif contains(pdfPath, 'FitzHugh')
-            ylim([0 1.4])
         end
-        
         l1=legend('True ','Inferred','Intermediate');
         l1.FontSize = 14;
-        if contains(pdfPath, 'FitzHugh')
+        if contains(pdfPath, 'FitzHug_Nagumo')
             l1.Location='northwest';
         else
             l1.Location='northeast';
@@ -58,11 +55,11 @@ function plotState_Beta_time_Pred(tspan,x,mu_observed,yzero,reproduced_data,n,nf
         if contains(pdfPath, 'Lorentz')
             ylim([0 9000]);  % Set y-axis limits for 'Lorentz' analysis
         elseif contains(pdfPath, 'FitzHugh')
-            ylim([0 1.4])
+            ylim([0 1.2])
         end
         l2=legend('True ','Inferred','Intermediate');
         l2.FontSize = 14;
-        if contains(pdfPath, 'FitzHugh')
+        if contains(pdfPath, 'FitzHug')
             l2.Location='northwest';
         else
             l2.Location='northeast';
