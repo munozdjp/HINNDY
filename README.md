@@ -129,21 +129,25 @@ Download the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.
  
 ### scripts
 
-In the directory of [Deep Learning Normal Form,](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), you will find the following scripts:
+In the directory of [Deep Learning Normal Form,](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), you will find the following scripts genereating its respective results:
+
 1- [Classifaction comparison MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) - Generate a comparison of accuracy for a library of four normal forms and compare the accuracy between Multilayer Perceptron, Random Forest, and K-nearest Neighbor.
 
 2- [Noise robustness for Random Forest on Normal Forms ](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py) - Generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
 
 3 [Downsampling Accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py) - Generate a downsampling size of the training data from a reduction of 2% to 0.5% of the original size.
 
+Additionally, after running the scripts the results are saved in a new directory called "figures results deep learning"
+
 **Working example**
 ----------------------
 
 When running the [Comparison Classifier script](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) you will obtain the following plot 
 
-<img src="(https://github.com/munozdjp/IHCV/blob/main/figures%20classification%20ML_RF_KNN/accuracy_vs_noise_level.png)" alt="My Image" style="width: 400px; height: 240px;">
+**Fig 1:** show a comparison of accuracy and noise robusteness for three algorithm MLP, random forest and KNearest neighbor. 
 
-Additionally the script will create a directory "figures classification ML" with the results.
+<img src="https://github.com/munozdjp/IHCV/blob/main/figures%20classification%20ML_RF_KNN/accuracy_vs_noise_level.png" alt="My Image" style="width: 700px; height: 420px;">
+
 
 ## Contributing
 Simply fork the repository and make the appropriate changes to contribute to IHCV. Once complete, send a pull request and we will evaluate your contributions.
@@ -153,7 +157,7 @@ IHCV is licensed under the GNU License. Refer to LICENSE for additional details.
   
 ## Requirements
 
-Before running the scripts, please ensure you have the following MATLAB toolboxes installed:
+Before running the Matlab Scripts, please ensure you have the following MATLAB toolboxes installed:
 
 - Optimization Toolbox
 - SimBiology
