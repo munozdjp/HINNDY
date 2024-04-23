@@ -1,5 +1,3 @@
-![image](https://github.com/munozdjp/IHCV/assets/67231886/d5ed1ea2-ecaa-4658-8401-a4cf85b9e85d)<p align="center">
-
 [![DOI](https://zenodo.org/badge/340074964.svg)](https://zenodo.org/badge/latestdoi/340074964)
 
   
