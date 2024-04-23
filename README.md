@@ -1,4 +1,4 @@
-<p align="center">
+![image](https://github.com/munozdjp/IHCV/assets/67231886/d5ed1ea2-ecaa-4658-8401-a4cf85b9e85d)<p align="center">
 
 [![DOI](https://zenodo.org/badge/340074964.svg)](https://zenodo.org/badge/latestdoi/340074964)
 
@@ -12,7 +12,9 @@ This repository contains the IHCV method applied to the different dynamical syst
 
 * [Summary](#Summary)
 * [Scripts](#Scripts)
-* [Working example: saddle node](#Working-example-saddle-node)  
+* [Working example: saddle node](#Working-example-saddle-node)
+* [Deep Learning for Normal Form Identification](#deep-learning-for-normal-form-identification)
+* [Scripts ML](#scripts-ml)
 * [Contributing](#Contributing)
 * [License](#License)
 * [Requirements](#Requirements)
@@ -127,19 +129,25 @@ conda env create -f environment.yml
 ```
 Download the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.25664514.v1) from Figshare and copy it to the current directory.
  
-## Scripts
+## Scripts ML
 
-In the directory of [Deep Learning Normal Form,](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), you will find the following scripts genereating its respective results:
+In the directory of [Deep Learning Normal Form](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), you will find various scripts that generate their respective results:
+
+Run each script with the following command:
+
+```
+python <scriptname>
+```
 
 1- [Classification Comparison: MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py): generate a comparison of accuracy for a library of four normal forms and compare the accuracy between Multilayer Perceptron, Random Forest, and K-nearest Neighbor.
 
-2- [Noise robustness for Random Forest on Normal Forms ](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py): generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
+2- [Noise robustness for Random Forest on Normal Forms](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py): generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
 
-3 [Downsampling Accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py): generate a downsampling size of the training data from a reduction of 2% to 0.5% of the original size.
+3- [Downsampling Accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py): generate a downsampling size of the training data from a reduction of 2% to 0.5% of the original size.
 
 Additionally, after running the scripts the results are saved in a new directory called "figures results deep learning"
 
-**Working example**
+**Working example ML**
 ----------------------
 
 When running the [Comparison Classifier script](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) you will obtain the following plot 
