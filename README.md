@@ -115,21 +115,27 @@ The output is the following 5 figures:
 
 ## Deep Learning for Normal Form identification
 
-Set your current directory to the location of the [Python scripts](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms):
+### Setup Instructions
+
+To access the [Python scripts](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), modify your current working directory by executing the following command:
 
 ```
 # Set working directory
 cd IHCV__Code/DeepLearningNormalForms
 ```
+### Create Conda Environment
 
-To create an environment from the `environment.yml` file, use the following command:
+Initialize the environment using the provided environment.yml file:
 
 ```sh
 conda env create -f environment.yml
 ```
-Download the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.25664514.v1) from Figshare and copy it to the current directory.
+
+### Download Data Set
+
+Obtain the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.25664514.v1) from Figshare and ensure it is placed in the current directory or same directory of the scripts.
  
-## Scripts ML
+### Scripts for Machine Learning
 
 In the directory of [Deep Learning Normal Form](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), you will find various scripts that generate their respective results:
 
@@ -145,12 +151,12 @@ python <scriptname>
 
 3- [Downsampling Accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py): generate a downsampling size of the training data from a reduction of 2% to 0.5% of the original size.
 
-Additionally, after running the scripts the results are saved in a new directory called "figures results deep learning"
+Results from these scripts are stored in a new directory titled "figures results deep learning"
 
 **Working example ML**
 ----------------------
 
-When running the [Comparison Classifier script](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) you will obtain the following plot 
+From the [Comparison Classifier Script](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) you will obtain the following plot 
 
 **Fig 1:** show a comparison of accuracy and noise robusteness for three algorithm MLP, random forest and KNearest neighbor. 
 
