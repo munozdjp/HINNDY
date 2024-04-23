@@ -131,6 +131,12 @@ Initialize the environment using the provided environment.yml file:
 conda env create -f environment.yml
 ```
 
+To activate the newly created environment named "SVM_RF_MLP", use the following command:
+
+```
+conda activate SVM_RF_MLP
+```
+
 ### Download Data Set
 
 Obtain the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.25664514.v1) from Figshare and ensure it is placed in the current directory or same directory of the scripts.
