@@ -111,6 +111,39 @@ The output is the following 5 figures:
 
 <img src="https://github.com/munozdjp/IHCV/blob/main/figures%20saddle%20node/fig6_saddlenode.png" alt="My Image" style="width: 417px; height: 300px;">
 
+## Deep Learning for Normal Form identification
+
+Set your current directory in the location of [python scripts](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms)
+```
+# set working dir
+cd IHCV__Code/DeepLearningNormalForms
+```
+
+To create an environment from the `environment.yml` file, use the following command:
+
+```sh
+conda env create -f environment.yml
+
+Download the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.25664514.v1) from figshare and copy it to the current directory.
+ 
+### scripts
+
+In the directory of [deep learning normal form](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms)  you will find following scripts.
+1- [Classifaction comparison MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) Generate a comparison of accuracy for a library of 4 normal forms and a comparison accuracy between Multilayer perceptron, random Forest and K-nearest Neigbor.
+
+2- [Noise robustness for Random Forest on Normal Forms ](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py) Generate the comparison of different classification using the different noise addition for a library of 4 bifurcation normal Saddel, Pitchfork, Transcritical and Hopf plus a combination of two normal forms Hopf-Saddle and Hopf-Pitchfork.
+
+3- [Downsampling accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py) Generate a downsamplinf size of the training data from a reduction of 2% to 0.5% from the original size.
+
+
+**Working example**
+----------------------
+
+When running [comparison classifier script](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) you will obtain the following plot 
+
+<img src="(https://github.com/munozdjp/IHCV/blob/main/figures%20classification%20ML_RF_KNN/accuracy_vs_noise_level.png)" alt="My Image" style="width: 400px; height: 240px;">
+
+Additionally the script will create a directory "figures classification ML" with the results.
 
 ## Contributing
 Simply fork the repository and make the appropriate changes to contribute to IHCV. Once complete, send a pull request and we will evaluate your contributions.
