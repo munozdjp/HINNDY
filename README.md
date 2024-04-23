@@ -131,11 +131,11 @@ Download the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.
 
 In the directory of [Deep Learning Normal Form,](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), you will find the following scripts genereating its respective results:
 
-1- [Classifaction comparison MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) - Generate a comparison of accuracy for a library of four normal forms and compare the accuracy between Multilayer Perceptron, Random Forest, and K-nearest Neighbor.
+1- [Classification Comparison: MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py): generate a comparison of accuracy for a library of four normal forms and compare the accuracy between Multilayer Perceptron, Random Forest, and K-nearest Neighbor.
 
-2- [Noise robustness for Random Forest on Normal Forms ](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py) - Generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
+2- [Noise robustness for Random Forest on Normal Forms ](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py): generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
 
-3 [Downsampling Accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py) - Generate a downsampling size of the training data from a reduction of 2% to 0.5% of the original size.
+3 [Downsampling Accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py): generate a downsampling size of the training data from a reduction of 2% to 0.5% of the original size.
 
 Additionally, after running the scripts the results are saved in a new directory called "figures results deep learning"
 
