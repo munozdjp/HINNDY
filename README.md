@@ -127,7 +127,7 @@ conda env create -f environment.yml
 ```
 Download the [data set of the normal forms](https://doi.org/10.6084/m9.figshare.25664514.v1) from Figshare and copy it to the current directory.
  
-### scripts
+## Scripts
 
 In the directory of [Deep Learning Normal Form,](https://github.com/munozdjp/IHCV/tree/main/IHCV__Code/DeepLearningNormalForms), you will find the following scripts genereating its respective results:
 
