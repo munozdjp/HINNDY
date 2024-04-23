@@ -151,7 +151,7 @@ Run each script with the following command:
 python <scriptname>
 ```
 
-1- [Classification Comparison: MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py): generate a comparison of accuracy for a library of four normal forms and compare the accuracy between Multilayer Perceptron, Random Forest, and K-nearest Neighbor.
+1- [Classification Comparison: MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py): generate a comparison of accuracy for a library of four normal forms and compare the accuracy between Multilayer Perceptron (MLP), Random Forest (RF), and K-Nearest Neighbor (KNN).
 
 2- [Noise robustness for Random Forest on Normal Forms](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py): generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
 
@@ -164,7 +164,7 @@ Results from these scripts are stored in a new directory titled "figures results
 
 From the [Comparison Classifier Script](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py) you will obtain the following plot 
 
-**Fig 1:** show a comparison of accuracy and noise robusteness for three algorithm MLP, random forest and KNearest neighbor. 
+**Fig 1:** show a comparison of accuracy and noise robusteness for three algorithm MLP, RF and KNN. 
 
 <img src="https://github.com/munozdjp/IHCV/blob/main/figures%20classification%20ML_RF_KNN/accuracy_vs_noise_level.png" alt="My Image" style="width: 700px; height: 420px;">
 
