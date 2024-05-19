@@ -151,7 +151,7 @@ python <scriptname>
 
 1- [Classification Comparison: MLP, RF, KNN](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/ClassificationComparisonRF_MLP_KNN.py): generate a comparison of accuracy for a library of four normal forms and compare the accuracy between Multilayer Perceptron (MLP), Random Forest (RF), and K-Nearest Neighbor (KNN).
 
-2- [Noise robustness for Random Forest on Normal Forms](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/Classifiers-conference-icsb.py): generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
+2- [Noise robustness for Random Forest on Normal Forms](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/RForest_Noise.py): generate a comparison of classification using different noise additions for a library of four bifurcation normal forms: Saddle, Pitchfork, Transcritical, and Hopf, plus a combination of two normal forms, Hopf-Saddle and Hopf-Pitchfork.
 
 3- [Downsampling Accuracy](https://github.com/munozdjp/IHCV/blob/main/IHCV__Code/DeepLearningNormalForms/DownsamplingComparison.py): generate a downsampling size of the training data from a reduction of 2% to 0.5% of the original size.
 
